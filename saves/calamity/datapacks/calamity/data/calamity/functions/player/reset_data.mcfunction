@@ -28,3 +28,6 @@ effect give @s minecraft:regeneration 3 10 false
 
 # Update the player sessionID to match current SessionID
 scoreboard players operation @s sessionID = SessionID gameVariable
+
+# Remove player from bossbars
+bossbar players remove calamity:iron_ore @s
