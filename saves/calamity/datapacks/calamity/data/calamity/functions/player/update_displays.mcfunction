@@ -20,10 +20,10 @@ scoreboard players operation #tempVar gameVariable -= RedPoints gameVariable
     # Blue is in the lead!
     execute if score #tempVar gameVariable matches 1.. run bossbar set calamity:iron_ore color blue
     execute if score #tempVar gameVariable matches 1.. run execute store result bossbar calamity:iron_ore value run scoreboard players get BluePoints gameVariable
-    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run stopsound @a * calamity:calamity.announcer.lead.friendly
-    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run stopsound @a * calamity:calamity.announcer.lead.enemy
-    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run playsound calamity:calamity.announcer.lead.friendly master @a[team=blue] 136 150 89 500
-    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run playsound calamity:calamity.announcer.lead.enemy master @a[team=red] 136 150 89 500
+    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run stopsound @a[current_world=true] * calamity:calamity.announcer.lead.friendly
+    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run stopsound @a[current_world=true] * calamity:calamity.announcer.lead.enemy
+    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run playsound calamity:calamity.announcer.lead.friendly master @a[current_world=true,team=blue] 136 150 89 500
+    execute if score #tempVar gameVariable matches 1.. unless score #TeamInLead gameVariable matches 1 run playsound calamity:calamity.announcer.lead.enemy master @a[current_world=true,team=red] 136 150 89 500
     execute if score #tempVar gameVariable matches 1.. run scoreboard players set #TeamInLead gameVariable 1
     # The game is tied!
     execute if score #tempVar gameVariable matches 0 run execute store result bossbar calamity:iron_ore value run scoreboard players get OreLeft gameVariable
@@ -31,10 +31,10 @@ scoreboard players operation #tempVar gameVariable -= RedPoints gameVariable
     # Red is in the lead!
     execute if score #tempVar gameVariable matches ..-1 run execute store result bossbar calamity:iron_ore value run scoreboard players get RedPoints gameVariable
     execute if score #tempVar gameVariable matches ..-1 run bossbar set calamity:iron_ore color red
-    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run stopsound @a * calamity:calamity.announcer.lead.friendly
-    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run stopsound @a * calamity:calamity.announcer.lead.enemy
-    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run playsound calamity:calamity.announcer.lead.friendly master @a[team=red] 136 150 89 500
-    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run playsound calamity:calamity.announcer.lead.enemy master @a[team=blue] 136 150 89 500
+    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run stopsound @a[current_world=true] * calamity:calamity.announcer.lead.friendly
+    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run stopsound @a[current_world=true] * calamity:calamity.announcer.lead.enemy
+    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run playsound calamity:calamity.announcer.lead.friendly master @a[current_world=true,team=red] 136 150 89 500
+    execute if score #tempVar gameVariable matches ..-1 unless score #TeamInLead gameVariable matches 2 run playsound calamity:calamity.announcer.lead.enemy master @a[current_world=true,team=blue] 136 150 89 500
     execute if score #tempVar gameVariable matches ..-1 run scoreboard players set #TeamInLead gameVariable 2
 # Always reset the #tempVar
 scoreboard players reset #tempVar gameVariable

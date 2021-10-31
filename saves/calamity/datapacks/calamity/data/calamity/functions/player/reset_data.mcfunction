@@ -22,7 +22,7 @@ team leave @s
 effect clear @s
 # Give status effects
 # Register player in the food scoreboard
-effect give @a minecraft:hunger 1 100 true
+effect give @a[current_world=true] minecraft:hunger 1 100 true
 effect give @s minecraft:instant_health 3 10 true
 effect give @s minecraft:regeneration 3 10 false
 

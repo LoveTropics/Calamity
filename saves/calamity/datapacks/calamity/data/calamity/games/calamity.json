@@ -25,12 +25,18 @@
   },
   "minimum_participants": 1,
   "maximum_participants": 10,
+
   "behaviors": [
+    {
+      "type": "ltminigames:force_load_region",
+      "region": "force_load"
+    },
+
     "ltminigames:setup_telemetry",
 
     {
       "type": "ltminigames:set_game_types",
-      "participant": "survival",
+      "participant": "adventure",
       "spectator": "spectator"
     },
 
@@ -49,16 +55,14 @@
     {
       "type": "ltminigames:commands",
       "ready": "function #calamity:load",
-      "stop": [
-        "trigger reset",
-        "scoreboard objectives remove displayPoints",
-        "bossbar remove calamity:iron_ore"
+      "stop": "function calamity:game_state/reset",
+      "player_participate": "function calamity:player/handle_joining_participant",
+      "player_spectate": "function calamity:player/handle_joining_spectator",
+      "player_remove": [
+        "function calamity:player/reset_data",
+        "tag @s remove Registered"
       ],
-      "player_add": [
-        "execute if score GameState gameVariable matches 0 run function calamity:player/set_to_lobby_mode"
-      ],
-      "player_participate": "function #calamity:register_player",
-      "player_remove": "function reset_data"
+      "tick": "function calamity:tick"
     },
 
     {

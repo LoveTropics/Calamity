@@ -35,13 +35,13 @@
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 1 run execute store result score OreLeft gameVariable run fill 130 0 181 142 67 195 minecraft:petrified_oak_slab[type=double] replace minecraft:iron_ore
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 1 run fill 130 0 181 142 67 195 minecraft:iron_ore replace minecraft:petrified_oak_slab
     # 4 Send welcome message
-    execute if score #arenaAction gameVariable matches 4 if score #currentArena gameVariable matches 1 as @a run function calamity:arena/calamity/send_welcome_message
+    execute if score #arenaAction gameVariable matches 4 if score #currentArena gameVariable matches 1 as @a[current_world=true] run function calamity:arena/calamity/send_welcome_message
     # 5 Start match actions - nothing additional needed
     # 6, 7 Modern has no additional effects required. (arenaAction 6 and 7 not needed)
     # 8 Give spawn items
-    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 1 run give @a[tag=Playing] wooden_axe{RepairCost:666,Damage:45,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:4,Operation:0,UUID:[I;-31386206,-663338499,-1677180052,-261106179],Slot:"mainhand"},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.4,Operation:0,UUID:[I;1174657704,-1982709368,-1633494077,363317273],Slot:"mainhand"}]} 1
+    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 1 run give @a[current_world=true,tag=Playing] wooden_axe{RepairCost:666,Damage:45,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:4,Operation:0,UUID:[I;-31386206,-663338499,-1677180052,-261106179],Slot:"mainhand"},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2.4,Operation:0,UUID:[I;1174657704,-1982709368,-1633494077,363317273],Slot:"mainhand"}]} 1
     # 9 Give spawn items
-    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 1 run give @a[tag=Playing,scores={timeSinceDeath=0}] wooden_axe{RepairCost:666,Damage:45,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:4,Operation:0,UUID:[I;-31386206,-663338499,-1677180052,-261106179],Slot:"mainhand"},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2,Operation:0,UUID:[I;1174657704,-1982709368,-1633494077,363317273],Slot:"mainhand"}]} 1
+    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 1 run give @a[current_world=true,tag=Playing,scores={timeSinceDeath=0}] wooden_axe{RepairCost:666,Damage:45,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:4,Operation:0,UUID:[I;-31386206,-663338499,-1677180052,-261106179],Slot:"mainhand"},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-2,Operation:0,UUID:[I;1174657704,-1982709368,-1633494077,363317273],Slot:"mainhand"}]} 1
     
 
 #> 2 - Shattering by Panguino (edited by Moesh)
@@ -55,20 +55,20 @@
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 2 run execute store result score OreLeft gameVariable run fill 134 4 112 140 15 120 minecraft:petrified_oak_slab[type=double] replace minecraft:iron_ore
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 2 run fill 134 4 112 140 15 120 minecraft:iron_ore replace minecraft:petrified_oak_slab
     # Send welcome message
-    execute if score #arenaAction gameVariable matches 4 if score #currentArena gameVariable matches 2 as @a run function calamity:arena/shattering/send_welcome_message
+    execute if score #arenaAction gameVariable matches 4 if score #currentArena gameVariable matches 2 as @a[current_world=true] run function calamity:arena/shattering/send_welcome_message
     # 5 - Start match
     # Remove the lectern
     execute if score #arenaAction gameVariable matches 5 if score #currentArena gameVariable matches 2 run setblock 106 13 117 minecraft:air
-    execute if score #arenaAction gameVariable matches 5 if score #currentArena gameVariable matches 2 run kill @e[type=area_effect_cloud,tag=menuInstructions]
+    execute if score #arenaAction gameVariable matches 5 if score #currentArena gameVariable matches 2 run kill @e[current_world=true,type=area_effect_cloud,tag=menuInstructions]
     # 6, 7 Give effects    
-    execute if score #arenaAction gameVariable matches 6 if score #currentArena gameVariable matches 2 as @a run effect give @s minecraft:night_vision 999999 0 true
-    execute if score #arenaAction gameVariable matches 7 if score #currentArena gameVariable matches 2 as @a run effect give @s minecraft:night_vision 999999 0 true
+    execute if score #arenaAction gameVariable matches 6 if score #currentArena gameVariable matches 2 as @a[current_world=true] run effect give @s minecraft:night_vision 999999 0 true
+    execute if score #arenaAction gameVariable matches 7 if score #currentArena gameVariable matches 2 as @a[current_world=true] run effect give @s minecraft:night_vision 999999 0 true
     # 8 Give spawn items
-    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 2 run give @a[tag=Playing] minecraft:bow{Unbreakable:1b,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:6,Operation:0,UUID:[I;-2068228233,-322420677,-1309210629,532578535],Slot:"mainhand"}]} 1
-    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 2 run give @a[tag=Playing] minecraft:arrow 16
+    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 2 run give @a[current_world=true,tag=Playing] minecraft:bow{Unbreakable:1b,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:6,Operation:0,UUID:[I;-2068228233,-322420677,-1309210629,532578535],Slot:"mainhand"}]} 1
+    execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 2 run give @a[current_world=true,tag=Playing] minecraft:arrow 16
     # 9 Give spawn items
-    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 2 run give @a[tag=Playing,scores={timeSinceDeath=0}] minecraft:bow{Unbreakable:1b,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:6,Operation:0,UUID:[I;-2068228233,-322420677,-1309210629,532578535],Slot:"mainhand"}]} 1
-    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 2 run give @a[tag=Playing,scores={timeSinceDeath=0}] minecraft:arrow 16
+    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 2 run give @a[current_world=true,tag=Playing,scores={timeSinceDeath=0}] minecraft:bow{Unbreakable:1b,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:6,Operation:0,UUID:[I;-2068228233,-322420677,-1309210629,532578535],Slot:"mainhand"}]} 1
+    execute if score #arenaAction gameVariable matches 9 if score #currentArena gameVariable matches 2 run give @a[current_world=true,tag=Playing,scores={timeSinceDeath=0}] minecraft:arrow 16
 
 # Always set score to zero. Players never have access to this variable, so we can take advantage of
 #   how the behavior will work.

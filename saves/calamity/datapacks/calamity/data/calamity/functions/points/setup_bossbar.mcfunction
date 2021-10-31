@@ -14,7 +14,7 @@ bossbar add calamity:iron_ore {"translate":"%s %s  %s %s","with":[{"translate":"
     execute store result bossbar calamity:iron_ore max run scoreboard players get OreLeft gameVariable
     bossbar set calamity:iron_ore style notched_10
     bossbar set calamity:iron_ore visible true
-    bossbar set calamity:iron_ore players @a
+    bossbar set calamity:iron_ore players @a[current_world=true]
     bossbar set calamity:iron_ore color purple
     # There's a quick animation of the bar filling up if you leave the bar empty when you make
     #   visible to players empty, then fill it up--even in the same tick. If the bar is already full

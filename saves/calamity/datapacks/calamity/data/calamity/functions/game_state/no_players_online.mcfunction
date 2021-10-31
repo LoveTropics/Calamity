@@ -5,7 +5,7 @@
 #>--------------------------------------------------------------------------------------------------
 
 # Send a message
-execute if score #OnlinePlayers gameVariable matches 0 run tellraw @a {"translate":"system.message","color": "red","with":[{"translate":"calamity.error.noPlayers"}]}
+execute if score #OnlinePlayers gameVariable matches 0 run tellraw @a[current_world=true] {"translate":"system.message","color": "red","with":[{"translate":"calamity.error.noPlayers"}]}
 # Reset any remaining online players
 execute if score #OnlinePlayers gameVariable matches 0 run function calamity:game_state/reset
 # Reset the arena

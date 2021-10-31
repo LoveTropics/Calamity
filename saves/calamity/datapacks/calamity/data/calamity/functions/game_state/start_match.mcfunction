@@ -13,7 +13,7 @@ gamerule doFireTick true
 
 #> Purpose: Establish a SessionID by using game time
 execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a sessionID = SessionID gameVariable
+scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
 
 # Make the ore counter visible
 function calamity:points/setup_bossbar
@@ -23,19 +23,19 @@ function calamity:points/setup_bossbar
 #>--------------------------------------------------------------------------------------------------
 
 # Any player on a blue/red team are playing the game
-tag @a[team=blue] add Playing
-tag @a[team=red] add Playing
+tag @a[current_world=true,team=blue] add Playing
+tag @a[current_world=true,team=red] add Playing
 
 # Clear the player's items and effects, give them items, refill their health and hunger
-clear @a
-effect give @a[tag=Playing] minecraft:regeneration 3 10 false
-execute as @a[tag=Playing] run function calamity:player/give_match_effects
-gamemode survival @a[tag=Playing]
-gamemode spectator @a[tag=!Playing]
+clear @a[current_world=true]
+effect give @a[current_world=true,tag=Playing] minecraft:regeneration 3 10 false
+execute as @a[current_world=true,tag=Playing] run function calamity:player/give_match_effects
+gamemode survival @a[current_world=true,tag=Playing]
+gamemode spectator @a[current_world=true,tag=!Playing]
 
-scoreboard players set @a[tag=Playing] streakPoints 0
-scoreboard players set @a[tag=Playing] streakLevel 0
-scoreboard players set @a[tag=Playing] nextStreakLevel 0
+scoreboard players set @a[current_world=true,tag=Playing] streakPoints 0
+scoreboard players set @a[current_world=true,tag=Playing] streakLevel 0
+scoreboard players set @a[current_world=true,tag=Playing] nextStreakLevel 0
 
 # Set the correct scoreboard
 scoreboard players operation ░░░░░ displayPoints = OreLeft gameVariable
@@ -55,29 +55,29 @@ scoreboard players reset * readyTeam
 scoreboard players reset * leaveTeam
 scoreboard players reset * shuffle
 scoreboard players reset * toggleSpectator
-scoreboard players enable @a[tag=Playing] gg
+scoreboard players enable @a[current_world=true,tag=Playing] gg
 
 # Reset fall damage for everyone, so players that are currently falling won't die after the game has started
-effect give @a minecraft:slow_falling 1 0 true
-effect clear @a minecraft:slow_falling
+effect give @a[current_world=true] minecraft:slow_falling 1 0 true
+effect clear @a[current_world=true] minecraft:slow_falling
 
-execute as @a[tag=Playing] run function calamity:player/set_match_spawnpoint
+execute as @a[current_world=true,tag=Playing] run function calamity:player/set_match_spawnpoint
 
 # Reset the match timer
 scoreboard players set MatchTimeInTicks gameVariable 0
 
 # Give starting items
 scoreboard players set #arenaAction gameVariable 8
-execute as @a[tag=Playing] run function calamity:arena/handler
+execute as @a[current_world=true,tag=Playing] run function calamity:arena/handler
 
 # Arena-specific actions (like removing blocks or entities)
 scoreboard players set #arenaAction gameVariable 5
 function calamity:arena/handler
 
 # Send tellraw BEFORE changing any game modes!
-tellraw @a {"translate":"system.message","color":"green","with":[{"translate":"calamity.seekGlory"}]}
-playsound minecraft:event.raid.horn master @a 136 150 89 999999
-playsound calamity:calamity.announcer.match.started master @a 136 150 89 500
+tellraw @a[current_world=true] {"translate":"system.message","color":"green","with":[{"translate":"calamity.seekGlory"}]}
+playsound minecraft:event.raid.horn master @a[current_world=true] 136 150 89 999999
+playsound calamity:calamity.announcer.match.started master @a[current_world=true] 136 150 89 500
 
 # Update game state
 scoreboard players set StartingMatch gameVariable 0

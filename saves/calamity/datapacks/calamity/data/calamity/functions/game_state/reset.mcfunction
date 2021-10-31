@@ -6,8 +6,8 @@
 #>--------------------------------------------------------------------------------------------------
 
 # Reset the trigger
-tellraw @a {"translate":"system.message","color":"green","with":[{"translate":"calamity.resetting"}]}
-scoreboard players reset @a[scores={reset=1..}] reset
+tellraw @a[current_world=true] {"translate":"system.message","color":"green","with":[{"translate":"calamity.resetting"}]}
+scoreboard players reset @a[current_world=true,scores={reset=1..}] reset
 scoreboard players set GameState gameVariable 0
 scoreboard players set BluePoints gameVariable 0
 scoreboard players set Blue displayPoints 0
@@ -28,8 +28,8 @@ function calamity:arena/handler
 
 # Update the SessionID so players are properly handled
 execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a sessionID = SessionID gameVariable
+scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
 
 # Return the player to the lobby state
-execute as @a run function #calamity:register_player
-execute as @a run function calamity:player/set_to_lobby_mode
+execute as @a[current_world=true] run function #calamity:register_player
+execute as @a[current_world=true] run function calamity:player/set_to_lobby_mode

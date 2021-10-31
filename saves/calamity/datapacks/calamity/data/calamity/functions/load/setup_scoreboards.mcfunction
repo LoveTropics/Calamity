@@ -306,7 +306,7 @@ scoreboard objectives add gameVariable dummy
 #   function like this, but it's important the players are registered so an error message won't
 #   play when we reload the game.
 execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a sessionID = SessionID gameVariable
+scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
 
 # Game starts in lobby mode by default.
 scoreboard players set GameState gameVariable 0

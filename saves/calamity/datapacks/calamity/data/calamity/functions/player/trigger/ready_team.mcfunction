@@ -12,16 +12,16 @@
 
 # Player used readyTeam, is on the blue team
 # Check the current ready state.
-execute if entity @a[scores={readyTeam=1..},team=blue] run scoreboard players set #tempVar gameVariable 0
-execute if score ReadyBlue gameVariable matches 0 if entity @a[scores={readyTeam=1..},team=blue] run scoreboard players set #tempVar gameVariable 1
-    execute if score #tempVar gameVariable matches 1 if entity @a[scores={readyTeam=1..},team=blue] run function calamity:game_state/ready_team/blue_ready
-    execute if score #tempVar gameVariable matches 0 if entity @a[scores={readyTeam=1..},team=blue] run function calamity:game_state/ready_team/blue_not_ready
+execute if entity @a[current_world=true,scores={readyTeam=1..},team=blue] run scoreboard players set #tempVar gameVariable 0
+execute if score ReadyBlue gameVariable matches 0 if entity @a[current_world=true,scores={readyTeam=1..},team=blue] run scoreboard players set #tempVar gameVariable 1
+    execute if score #tempVar gameVariable matches 1 if entity @a[current_world=true,scores={readyTeam=1..},team=blue] run function calamity:game_state/ready_team/blue_ready
+    execute if score #tempVar gameVariable matches 0 if entity @a[current_world=true,scores={readyTeam=1..},team=blue] run function calamity:game_state/ready_team/blue_not_ready
 # Player used readyTeam, is on the blue team
 # Check the current ready state.
-execute if entity @a[scores={readyTeam=1..},team=red] run scoreboard players set #tempVar gameVariable 0
-execute if score ReadyRed gameVariable matches 0 if entity @a[scores={readyTeam=1..},team=red] run scoreboard players set #tempVar gameVariable 1
-    execute if score #tempVar gameVariable matches 1 if entity @a[scores={readyTeam=1..},team=red] run function calamity:game_state/ready_team/red_ready
-    execute if score #tempVar gameVariable matches 0 if entity @a[scores={readyTeam=1..},team=red] run function calamity:game_state/ready_team/red_not_ready
+execute if entity @a[current_world=true,scores={readyTeam=1..},team=red] run scoreboard players set #tempVar gameVariable 0
+execute if score ReadyRed gameVariable matches 0 if entity @a[current_world=true,scores={readyTeam=1..},team=red] run scoreboard players set #tempVar gameVariable 1
+    execute if score #tempVar gameVariable matches 1 if entity @a[current_world=true,scores={readyTeam=1..},team=red] run function calamity:game_state/ready_team/red_ready
+    execute if score #tempVar gameVariable matches 0 if entity @a[current_world=true,scores={readyTeam=1..},team=red] run function calamity:game_state/ready_team/red_not_ready
 # Reset our temporary variable.
 scoreboard players set #tempVar gameVariable 0
 
@@ -29,10 +29,10 @@ scoreboard players set #tempVar gameVariable 0
 # You'll see this formation a lot when using triggers. These next two lines are a safeguard for any
 #   fools who be wanting to try using trigger for other numbers and softlocking themselves.
 #   Don't suffer those fools, OK? You got this.
-scoreboard players reset @a[scores={readyTeam=..-1}] readyTeam
-scoreboard players reset @a[scores={readyTeam=1..}] readyTeam
-scoreboard players enable @a[team=blue] readyTeam
-scoreboard players enable @a[team=red] readyTeam
+scoreboard players reset @a[current_world=true,scores={readyTeam=..-1}] readyTeam
+scoreboard players reset @a[current_world=true,scores={readyTeam=1..}] readyTeam
+scoreboard players enable @a[current_world=true,team=blue] readyTeam
+scoreboard players enable @a[current_world=true,team=red] readyTeam
 
 scoreboard players set #tempVar gameVariable 0
 execute if score GameState gameVariable matches 0 run scoreboard players operation #tempVar gameVariable = ReadyBlue gameVariable

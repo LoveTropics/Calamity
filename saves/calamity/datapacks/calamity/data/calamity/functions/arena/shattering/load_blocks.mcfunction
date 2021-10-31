@@ -58,7 +58,7 @@ summon minecraft:area_effect_cloud 77 13 116 {CustomName: '{"text":"RedSpawnpoin
 
 # Define map height
 summon minecraft:area_effect_cloud 90 49 118 {CustomName: '{"text":"ArenaHeight"}', Tags: ["marker", "arenaHeight"], CustomNameVisible: 0b, Duration: 2147483647}
-execute store result score #arenaHeight gameVariable run data get entity @e[type=minecraft:area_effect_cloud,tag=marker,tag=arenaHeight,limit=1] Pos[1]
+execute store result score #arenaHeight gameVariable run data get entity @e[current_world=true,type=minecraft:area_effect_cloud,tag=marker,tag=arenaHeight,limit=1] Pos[1]
 
 # Main menu oak table
 # This next command makes use of a custom font. I use several characters in this custom font, but
