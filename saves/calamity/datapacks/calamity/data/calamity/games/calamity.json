@@ -1,0 +1,78 @@
+{
+  "name": {"translate": "ltminigames.minigame.calamity"},
+  "statistics_key": "calamity",
+  "map": {
+    "type": "ltminigames:load_map",
+    "load_from": "calamity:calamity",
+    "dimension": "lt:games/calamity",
+    "dimension_type": {
+      "ultrawarm": false,
+      "natural": true,
+      "piglin_safe": true,
+      "respawn_anchor_works": true,
+      "bed_works": false,
+      "has_raids": true,
+      "has_skylight": false,
+      "has_ceiling": true,
+      "coordinate_scale": 1,
+      "ambient_light": 0.1,
+      "logical_height": 255,
+      "effects": "minecraft:the_nether",
+      "infiniburn": "minecraft:infiniburn_nether",
+      "min_y": 0,
+      "height": 256
+    }
+  },
+  "minimum_participants": 1,
+  "maximum_participants": 10,
+  "behaviors": [
+    "ltminigames:setup_telemetry",
+
+    {
+      "type": "ltminigames:set_game_types",
+      "participant": "survival",
+      "spectator": "spectator"
+    },
+
+    "ltminigames:assign_player_roles",
+
+    {
+      "type": "ltminigames:join_as_role",
+      "role": "spectator"
+    },
+
+    {
+      "type": "ltminigames:position_players",
+      "all": "spawn"
+    },
+
+    {
+      "type": "ltminigames:commands",
+      "ready": "function #calamity:load",
+      "stop": [
+        "trigger reset",
+        "scoreboard objectives remove displayPoints",
+        "bossbar remove calamity:iron_ore"
+      ],
+      "player_add": [
+        "execute if score GameState gameVariable matches 0 run function calamity:player/set_to_lobby_mode"
+      ],
+      "player_participate": "function #calamity:register_player",
+      "player_remove": "function reset_data"
+    },
+
+    {
+      "type": "ltminigames:set_client_state",
+      "state": {
+        "type": "ltminigames:resource_pack",
+        "pack_name": "file/Calamity"
+      }
+    },
+
+    "ltminigames:place_by_death_order",
+    "ltminigames:cause_of_death_tracker",
+    "ltminigames:kills_tracker",
+    "ltminigames:damage_tracker",
+    "ltminigames:spectator_chase"
+  ]
+}
