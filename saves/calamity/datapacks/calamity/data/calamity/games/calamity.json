@@ -55,7 +55,7 @@
     {
       "type": "ltminigames:commands",
       "ready": "function #calamity:load",
-      "stop": "function calamity:game_state/reset",
+      "stop": "function calamity:game_state/remove_all_tags_teams_and_scoreboards",
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [
@@ -96,6 +96,24 @@
         "showDeathMessages": "true",
         "spawnRadius": "7"
       }
+    },
+
+    {
+      "type": "ltminigames:setup_teams",
+      "teams": [
+        {
+          "key": "red",
+          "name": "Red",
+          "dye": "red",
+          "text": "red"
+        },
+        {
+          "key": "blue",
+          "name": "Blue",
+          "dye": "blue",
+          "text": "blue"
+        }
+      ]
     },
 
     "ltminigames:place_by_death_order",
