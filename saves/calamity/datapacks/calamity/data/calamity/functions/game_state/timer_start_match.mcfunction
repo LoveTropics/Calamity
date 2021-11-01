@@ -29,13 +29,7 @@ execute if score TimeInTicks gameVariable matches 40 run playsound calamity:cala
 execute if score TimeInTicks gameVariable matches 20 run tellraw @a[current_world=true] {"translate":"system.message","color":"green","with":[{"translate":"calamity.startMatch.countdown.lastFiveSeconds","with":[{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}]}
 execute if score TimeInTicks gameVariable matches 20 run playsound calamity:calamity.announcer.countdown.1 master @a[current_world=true] 136 150 89 500
 
-# It's time to start the game!
-function calamity:game_state/check_if_start_conditions_met
-execute if score #PlayersPlaying gameVariable matches 0 run playsound calamity:calamity.announcer.match.cancelled master @a[current_world=true] 136 150 89 500
-execute if score #PlayersPlaying gameVariable matches 0 run tellraw @a[current_world=true] {"translate":"system.message","color":"green","with":[{"translate":"calamity.match.cancelled.noPlayers","color":"red"}]}
-execute if score #PlayersPlaying gameVariable matches 0 run function calamity:player/trigger/cancel_start
+execute if score TimeInTicks gameVariable matches 0 run function calamity:game_state/start_match
 
-execute if score TimeInTicks gameVariable matches 0 if score #PlayersPlaying gameVariable matches 1.. run function calamity:game_state/start_match
-
-# This function is run every tick as long as this
+# This function is run every tick if this is true
 execute if score TimeInTicks gameVariable matches 1.. run scoreboard players remove TimeInTicks gameVariable 1

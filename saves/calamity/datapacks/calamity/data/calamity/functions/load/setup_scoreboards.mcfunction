@@ -100,46 +100,6 @@ scoreboard objectives remove giveSpawnItems
 scoreboard objectives add giveSpawnItems deathCount
 scoreboard objectives add playerHeight dummy
 
-# Player triggers
-# These are ALWAYS reset when they are enabled. Players have no score by default.
-# Enabled during the match. Players are moved to spectator if they want to gg out early.
-scoreboard objectives remove gg
-scoreboard objectives add gg trigger
-# Players can use this to reset the level after a match has concluded.
-scoreboard objectives remove reset
-scoreboard objectives add reset trigger
-# Objectives which can only be triggered during the lobby stage.
-	# Start match
-	scoreboard objectives remove startMatch
-	scoreboard objectives add startMatch trigger
-	# Cancel start 
-	scoreboard objectives remove cancelStart
-	scoreboard objectives add cancelStart trigger
-	# Select a team
-	scoreboard objectives remove selectTeam
-	scoreboard objectives add selectTeam trigger
-	# Leave your team
-	scoreboard objectives remove leaveTeam
-	scoreboard objectives add leaveTeam trigger
-	# Spectate
-	scoreboard objectives remove toggleSpectator
-	scoreboard objectives add toggleSpectator trigger
-	# Reset after match is complete
-	scoreboard objectives remove reset
-	scoreboard objectives add reset trigger
-    # Let teams ready up
-    scoreboard objectives remove readyTeam
-    scoreboard objectives add readyTeam trigger
-    # Resets your chosen starting weapon
-    scoreboard objectives remove resetSpawnItem
-    scoreboard objectives add resetSpawnItem trigger
-    # Shuffle teams
-    scoreboard objectives remove shuffle
-    scoreboard objectives add shuffle trigger
-    # Select arena
-    scoreboard objectives remove arena
-    scoreboard objectives add arena trigger
-
 # Craft items are worth points. This scoreboard tracks those points.
 # iron_nugget and iron_block have been intentionally left out.
 # Diamond can be found on the map, I am not counting these for points.
@@ -317,5 +277,5 @@ scoreboard players set GameState gameVariable 0
 
 # Used to determine whether or not the game has started.
 # This variable is accessed from calamity:tick, calamity:game_state/start_match,
-# calamity:player/trigger/cancel_start, and calamity:player/trigger/start_match
+# and calamity:player/trigger/start_match
 scoreboard players set StartingMatch gameVariable 0
