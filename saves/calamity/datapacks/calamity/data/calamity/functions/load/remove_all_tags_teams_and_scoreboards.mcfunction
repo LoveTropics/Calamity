@@ -97,4 +97,4 @@ team remove finishLine
 
 # Reset relevant gamerules
 gamerule doImmediateRespawn false
-gamerule doFireTick fals
+gamerule doFireTick false
