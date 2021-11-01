@@ -1,8 +1,0 @@
-{
-    "comment": "Blocks which can be replaced by moving piston blocks.",
-    "replace": false,
-    "values": [
-      "minecraft:air",
-      "minecraft:fire"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "comment": "Blocks which are valid right outside the arena and won't be removed.",
-    "replace": false,
-    "values": [
-      "minecraft:barrier",
-      "minecraft:moving_piston",
-      "minecraft:air"
-    ]
-}
