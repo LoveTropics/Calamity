@@ -199,9 +199,9 @@ tellraw @a[current_world=true,tag=Enchant,tag=!CheckForValidItem] {"translate":"
 execute if entity @a[current_world=true,tag=Enchant,tag=!CheckForValidItem,team=blue] run tellraw @a[current_world=true] {"translate":"calamity.generator.enchantedItem.announced","color":"blue","with":[{"translate":"calamity.enchanted.item","color":"white"},{"translate":"team.blue"},{"translate":"b","color":"blue","font": "calamity:icons"}]}
 execute if entity @a[current_world=true,tag=Enchant,tag=!CheckForValidItem,team=red] run tellraw @a[current_world=true] {"translate":"calamity.generator.enchantedItem.announced","color":"red","with":[{"translate":"calamity.enchanted.item","color":"white"},{"translate":"team.red"},{"translate":"r","color": "red","font": "calamity:icons"}]}
 
-execute as @a[current_world=true,tag=Enchant] run playsound calamity:generator.enchantment master @a[current_world=true] ~ ~ ~ 0.5 0.5
-execute as @a[current_world=true,tag=Enchant,team=blue] run playsound calamity:calamity.announcer.enchanted.item master @a[current_world=true,team=red] ~ ~ ~ 500
-execute as @a[current_world=true,tag=Enchant,team=red] run playsound calamity:calamity.announcer.enchanted.item master @a[current_world=true,team=blue] ~ ~ ~ 500
+execute as @a[current_world=true,tag=Enchant,tag=!CheckForValidItem] run playsound calamity:generator.enchantment master @a[current_world=true] ~ ~ ~ 0.5 0.5
+execute as @a[current_world=true,tag=Enchant,team=blue,tag=!CheckForValidItem] run playsound calamity:calamity.announcer.enchanted.item master @a[current_world=true,team=red] ~ ~ ~ 500
+execute as @a[current_world=true,tag=Enchant,team=red,tag=!CheckForValidItem] run playsound calamity:calamity.announcer.enchanted.item master @a[current_world=true,team=blue] ~ ~ ~ 500
 
 # If the CheckForValidItem tag has survived on a player this far down, then we are sure they are
 #   not holding a valid item to enchant. Let's give them nothing. This isn't a charity!
