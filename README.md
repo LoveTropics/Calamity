@@ -4,6 +4,9 @@
 
 Calamity is a point race with a large focus on resource management. Be the first team to reach the point limit to win! The point limit can be lowered by mining Iron Ore from the central mine.
 
+# Love Tropics Specific Information
+- Use `function timer_start_match` to start a match
+
 **There are three ways to get points:**
 - Using generators successfully
 - Killing enemy players
