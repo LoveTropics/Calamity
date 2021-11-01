@@ -73,6 +73,31 @@
       }
     },
 
+    {
+      "type": "ltminigames:set_game_rules",
+      "rules": {
+        "announceAdvancements": "false",
+        "disableRaids": "true",
+        "doDaylightCycle": "false",
+        "doEntityDrops": "true",
+        "doFireTick": "false",
+        "doImmediateRespawn": "false",
+        "doInsomnia": "false",
+        "doLimitedCrafting": "false",
+        "doMobLoot": "true",
+        "doMobSpawning": "false",
+        "doPatrolSpawning": "false",
+        "doTileDrops": "true",
+        "doTraderSpawning": "false",
+        "doWeatherCycle": "false",
+        "keepInventory": "false",
+        "mobGriefing": "false",
+        "naturalRegeneration": "true",
+        "showDeathMessages": "true",
+        "spawnRadius": "7"
+      }
+    },
+
     "ltminigames:place_by_death_order",
     "ltminigames:cause_of_death_tracker",
     "ltminigames:kills_tracker",
