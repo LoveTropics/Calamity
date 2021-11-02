@@ -25,22 +25,6 @@
   },
   "minimum_participants": 1,
   "maximum_participants": 10,
-  "waiting": {
-    "map": {
-      "type": "ltminigames:load_map",
-      "load_from": "lt:waiting_lobby",
-      "dimension_type": "tropicraft:tropics"
-    },
-    "behaviors": [
-      {
-        "type": "lt:common/waiting",
-        "regions": {
-          "spawn": "spawn"
-        }
-      },
-      "lt:teams/red_blue"
-    ]
-  },
 
   "behaviors": [
     {
@@ -113,6 +97,25 @@
         "spawnRadius": "7"
       }
     },
+
+    {
+      "type": "ltminigames:setup_teams",
+      "teams": [
+        {
+          "key": "red",
+          "name": "Red",
+          "dye": "red",
+          "text": "red"
+        },
+        {
+          "key": "blue",
+          "name": "Blue",
+          "dye": "blue",
+          "text": "blue"
+        }
+      ]
+    },
+
     "ltminigames:place_by_death_order",
     "ltminigames:cause_of_death_tracker",
     "ltminigames:kills_tracker",
