@@ -37,12 +37,10 @@ team add red {"translate":"team.red"}
 team add fakeBlue {"translate":"team.blue"}
 	team modify fakeBlue collisionRule pushOtherTeams
 	team modify fakeBlue color blue
-	team modify fakeBlue prefix {"translate":"spacer.right","color":"blue","with": [{"translate":"☒","color":"dark_red"}]}
 	team modify fakeBlue suffix {"translate":"spacer.left","color":"blue","with": [{"translate":"b","font":"calamity:icons"}]}
 team add fakeRed {"translate":"team.red"}
 	team modify fakeRed collisionRule pushOtherTeams
 	team modify fakeRed color red
-	team modify fakeRed prefix {"translate":"spacer.right","color":"red","with": [{"translate":"☒","color":"dark_red"}]}
 	team modify fakeRed suffix {"translate":"spacer.left","color":"red","with": [{"translate":"r","font":"calamity:icons"}]}
 team add finishLine
 	team modify finishLine color white
