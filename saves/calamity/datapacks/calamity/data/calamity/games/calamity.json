@@ -103,7 +103,7 @@
     },
     {
       "type": "ltminigames:scheduled_commands",
-      "run": "function calamity:game_state/start_minigame_countdown",
+      "run": "function calamity:load/start_match_countdown",
       "time": 300
     },
 
