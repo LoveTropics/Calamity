@@ -41,7 +41,6 @@ scoreboard players set @a[current_world=true,tag=Playing] nextStreakLevel 0
 scoreboard players operation ░░░░░ displayPoints = OreLeft gameVariable
 scoreboard players set Blue displayPoints 0
 scoreboard players set Red displayPoints 0
-scoreboard objectives setdisplay sidebar displayPoints
 scoreboard players set ReadyBlue gameVariable 0
 scoreboard players set ReadyRed gameVariable 0
 team join blue Blue
