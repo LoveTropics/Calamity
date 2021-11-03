@@ -60,6 +60,10 @@
 
   "behaviors": [
     {
+      "type": "ltminigames:teams",
+      "static_team_ids": true
+    },
+    {
       "type": "ltminigames:force_load_region",
       "region": "force_load"
     },
