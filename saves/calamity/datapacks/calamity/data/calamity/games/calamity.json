@@ -96,7 +96,7 @@
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [
-        "function calamity:player/reset_da §ta",
+        "function calamity:player/reset_data",
         "tag @s remove Registered"
       ],
       "tick": "function calamity:tick"
