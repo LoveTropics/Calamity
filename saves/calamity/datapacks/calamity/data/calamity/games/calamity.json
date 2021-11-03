@@ -111,7 +111,7 @@
       "type": "ltminigames:set_client_state",
       "state": {
         "type": "ltminigames:resource_pack",
-        "pack_name": "file/calamity.zip"
+        "pack_name": "file/Calamity"
       }
     },
 
