@@ -35,6 +35,10 @@
       {
         "type": "lt:common/waiting",
         "regions": {
+<<<<<<< Updated upstream
+=======
+          
+>>>>>>> Stashed changes
           "spawn": "spawn"
         }
       },
