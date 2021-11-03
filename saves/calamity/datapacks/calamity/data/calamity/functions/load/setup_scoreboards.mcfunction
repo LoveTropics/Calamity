@@ -65,7 +65,9 @@ scoreboard objectives remove displayPercent
 scoreboard objectives add displayPercent dummy
 scoreboard objectives remove displayPoints
 scoreboard objectives add displayPoints dummy {"translate":"calamity.goal","color": "light_purple"}
-    scoreboard objectives setdisplay sidebar displayPoints
+    scoreboard objectives setdisplay sidebar.team.red displayPoints
+    scoreboard objectives setdisplay sidebar.team.blue displayPoints
+    scoreboard objectives setdisplay sidebar.team.gray displayPoints
     scoreboard players set Blue displayPoints 0
     scoreboard players set Red displayPoints 0
 
