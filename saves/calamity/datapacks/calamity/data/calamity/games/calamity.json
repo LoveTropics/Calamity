@@ -60,10 +60,6 @@
 
   "behaviors": [
     {
-      "type": "ltminigames:teams",
-      "static_team_ids": true
-    },
-    {
       "type": "ltminigames:force_load_region",
       "region": "force_load"
     },
@@ -86,6 +82,11 @@
     {
       "type": "ltminigames:position_players",
       "all": "spawn"
+    },
+
+    {
+      "type": "ltminigames:teams",
+      "static_team_ids": true
     },
 
     {
@@ -137,6 +138,11 @@
         "showDeathMessages": "true",
         "spawnRadius": "7"
       }
+    },
+
+    {
+      "type": "ltminigames:set_day_time",
+      "time": 18000
     },
 
     "ltminigames:place_by_death_order",

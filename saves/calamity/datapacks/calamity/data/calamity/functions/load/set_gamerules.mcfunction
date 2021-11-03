@@ -8,6 +8,7 @@
 weather clear 1000000
 
 # Submitted for the approval of the Midnight Society...
-time set midnight
+# The Midnight Society did not approve
+# time set midnight
 
 
