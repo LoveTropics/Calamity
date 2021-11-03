@@ -96,6 +96,11 @@
       ],
       "tick": "function calamity:tick"
     },
+    {
+      "type": "ltminigames:scheduled_commands",
+      "run": "function calamity:game_state/timer_start_match",
+      "time": 300
+    },
 
     {
       "type": "ltminigames:set_client_state",
