@@ -96,14 +96,14 @@
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [
-        "function calamity:player/reset_data",
+        "function calamity:player/reset_da §ta",
         "tag @s remove Registered"
       ],
       "tick": "function calamity:tick"
     },
     {
       "type": "ltminigames:scheduled_commands",
-      "run": "function calamity:game_state/timer_start_match",
+      "run": "function calamity:game_state/start_match",
       "time": 300
     },
 
@@ -123,7 +123,7 @@
         "doDaylightCycle": "false",
         "doEntityDrops": "true",
         "doFireTick": "false",
-        "doImmediateRespawn": "false",
+        "doImmediateRespawn": "true",
         "doInsomnia": "false",
         "doLimitedCrafting": "false",
         "doMobLoot": "true",
