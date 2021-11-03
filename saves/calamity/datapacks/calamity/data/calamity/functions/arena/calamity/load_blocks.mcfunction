@@ -252,5 +252,5 @@ function calamity:load/setup_generators
 # Main menu oak table
 # While this should normally exist, LoveTropics is a big event with many moving parts. We don't need
 #   my fancy pixel art creating questions and concerns when it is not the focus.
-summon minecraft:area_effect_cloud 136.5 57.75 68.5 {CustomNameVisible: 1b, Duration: 2147483647, CustomName: '[{"text":"We love tropics!"}]'}
+summon minecraft:area_effect_cloud 136.5 57.75 68.5 {CustomNameVisible: 1b, Duration: 2147483647, CustomName: '[{"text":"Love Tropics","color":"#89C521"},{"text":" ❤ ","color":"red"},{"text":"OSA Conservation","color":"#00718E"}]'}
 setblock 136 57 68 minecraft:air
