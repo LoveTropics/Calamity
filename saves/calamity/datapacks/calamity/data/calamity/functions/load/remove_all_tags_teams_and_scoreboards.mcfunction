@@ -93,6 +93,8 @@ team remove lobby
 team remove spectator
 team remove blue
 team remove red
+team remove fakeRed
+team remove fakeBlue
 team remove finishLine
 
 # Reset relevant gamerules
