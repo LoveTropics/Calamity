@@ -1,0 +1,1 @@
+schedule function calamity:load/remove_all_tags_teams_and_scoreboards 20s
