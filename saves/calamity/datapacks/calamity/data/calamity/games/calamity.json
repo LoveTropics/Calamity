@@ -92,7 +92,7 @@
     {
       "type": "ltminigames:commands",
       "ready": "function #calamity:load",
-      "stop": "function calamity:game_state/remove_all_tags_teams_and_scoreboards",
+      "stop": "function calamity:game_state/start_end_minigame_countdown",
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [
@@ -103,7 +103,7 @@
     },
     {
       "type": "ltminigames:scheduled_commands",
-      "run": "function calamity:game_state/start_end_minigame_countdown",
+      "run": "function calamity:game_state/start_minigame_countdown",
       "time": 300
     },
 
