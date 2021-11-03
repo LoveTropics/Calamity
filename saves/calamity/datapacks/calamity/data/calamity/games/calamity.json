@@ -25,7 +25,6 @@
   },
   "minimum_participants": 1,
   "maximum_participants": 10,
-<<<<<<< HEAD
   "waiting": {
     "map": {
       "type": "ltminigames:load_map",
@@ -36,10 +35,6 @@
       {
         "type": "lt:common/waiting",
         "regions": {
-<<<<<<< Updated upstream
-=======
-          
->>>>>>> Stashed changes
           "spawn": "spawn"
         }
       },
@@ -62,8 +57,6 @@
       }
     ]
   },
-=======
->>>>>>> parent of 88981dd... did it properly this time.
 
   "behaviors": [
     {
@@ -135,24 +128,6 @@
         "showDeathMessages": "true",
         "spawnRadius": "7"
       }
-    },
-
-    {
-      "type": "ltminigames:setup_teams",
-      "teams": [
-        {
-          "key": "red",
-          "name": "Red",
-          "dye": "red",
-          "text": "red"
-        },
-        {
-          "key": "blue",
-          "name": "Blue",
-          "dye": "blue",
-          "text": "blue"
-        }
-      ]
     },
 
     "ltminigames:place_by_death_order",
