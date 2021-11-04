@@ -96,5 +96,3 @@ team remove red
 team remove fakeRed
 team remove fakeBlue
 team remove finishLine
-
-game finish

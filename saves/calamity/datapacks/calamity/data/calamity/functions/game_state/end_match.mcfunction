@@ -18,8 +18,8 @@ scoreboard players operation @a[current_world=true] sessionID = SessionID gameVa
 tag @a[current_world=true] remove VotedForfeit
 tag @a[current_world=true] remove ResetTheSpawnItem
 
-# Tell the minigame system that the game has ended
-function calamity:load/start_end_minigame_countdown
+# Finish the damn game. We hate waiting around.
+game finish
 
 # Update game state
 scoreboard players set GameState gameVariable 2
