@@ -54,6 +54,13 @@
             "text": "blue"
           }
         ]
+      },
+      {
+        "type": "ltminigames:set_client_state",
+        "state": {
+          "type": "ltminigames:resource_pack",
+          "pack_name": "file/Calamity"
+        }
       }
     ]
   },
@@ -75,7 +82,7 @@
     "ltminigames:assign_player_roles",
 
     {
-      "type": "ltminigames:join_as_role",
+      "type": "ltminigames:join_late_with_role",
       "role": "spectator"
     },
 
