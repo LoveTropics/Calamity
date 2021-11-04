@@ -152,6 +152,11 @@
       "time": 18000
     },
 
+    {
+      "type": "ltminigames:set_difficulty",
+      "difficulty": "normal"
+    }
+
     "ltminigames:place_by_death_order",
     "ltminigames:cause_of_death_tracker",
     "ltminigames:kills_tracker",

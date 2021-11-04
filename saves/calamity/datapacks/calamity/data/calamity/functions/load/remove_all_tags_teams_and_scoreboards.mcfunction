@@ -97,8 +97,4 @@ team remove fakeRed
 team remove fakeBlue
 team remove finishLine
 
-# Reset relevant gamerules
-gamerule doImmediateRespawn false
-gamerule doFireTick false
-
 game finish

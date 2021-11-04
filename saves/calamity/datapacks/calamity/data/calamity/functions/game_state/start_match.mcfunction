@@ -4,13 +4,6 @@
 #> Purpose: Reset the map and player states to neutral
 #>--------------------------------------------------------------------------------------------------
 
-# Set map rules
-difficulty normal
-gamerule doInsomnia false
-gamerule showDeathMessages true
-gamerule announceAdvancements false
-gamerule doFireTick true
-
 #> Purpose: Establish a SessionID by using game time
 execute store result score SessionID gameVariable run time query gametime
 scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
