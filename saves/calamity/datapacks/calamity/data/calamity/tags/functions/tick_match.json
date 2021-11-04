@@ -1,0 +1,7 @@
+{
+        "values": [
+                "calamity:generator/handler",
+                "calamity:points/sequencer",
+                "calamity:build_protection/handler"
+	]
+}

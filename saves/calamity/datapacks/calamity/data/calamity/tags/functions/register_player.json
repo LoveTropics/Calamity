@@ -1,0 +1,7 @@
+{
+    "values": [
+        "calamity:player/reset_data",
+        "calamity:player/enable_triggers",
+        "calamity:player/give_recipes"
+    ]
+}
