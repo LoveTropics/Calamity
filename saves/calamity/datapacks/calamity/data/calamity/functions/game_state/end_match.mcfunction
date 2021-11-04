@@ -19,7 +19,7 @@ tag @a[current_world=true] remove VotedForfeit
 tag @a[current_world=true] remove ResetTheSpawnItem
 
 # Finish the damn game. We hate waiting around.
-game finish
+execute in lt:game/calamity run game finish
 
 # Update game state
 scoreboard players set GameState gameVariable 2
