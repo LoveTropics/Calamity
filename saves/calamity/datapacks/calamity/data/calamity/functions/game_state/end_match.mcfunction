@@ -19,7 +19,7 @@ tag @a[current_world=true] remove VotedForfeit
 tag @a[current_world=true] remove ResetTheSpawnItem
 
 # Finish the damn game. We hate waiting around.
-function calamity:load/start_end_minigame_count
+function calamity:load/start_end_minigame_countdown
 
 # Update game state
 scoreboard players set GameState gameVariable 2
