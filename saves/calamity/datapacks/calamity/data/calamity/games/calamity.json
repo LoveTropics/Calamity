@@ -99,7 +99,7 @@
     {
       "type": "ltminigames:commands",
       "ready": "function #calamity:load",
-      "stop": "function calamity:load/start_end_minigame_countdown",
+      "cancel": "function calamity:load/start_end_minigame_countdown",
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [
