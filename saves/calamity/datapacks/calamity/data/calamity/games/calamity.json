@@ -99,7 +99,7 @@
     {
       "type": "ltminigames:commands",
       "ready": "function #calamity:load",
-      "stop": "function calamity:load/remove_all_tags_teamd_and_scoreboards",
+      "stop": "function calamity:load/remove_all_tags_teams_and_scoreboards",
       "player_participate": "function calamity:player/handle_joining_participant",
       "player_spectate": "function calamity:player/handle_joining_spectator",
       "player_remove": [

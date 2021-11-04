@@ -1,2 +1,2 @@
-schedule function calamity:load/remove_all_tags_teams_and_scoreboards 20s
+schedule function calamity:load/finish_game 20s
 tellraw @a[current_world=true] {"translate":"system.message","color":"green","with":[{"translate":"World will close in 20 seconds...","color":"white"}]}
