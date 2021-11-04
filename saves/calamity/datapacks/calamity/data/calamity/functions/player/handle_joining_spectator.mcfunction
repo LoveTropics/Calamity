@@ -12,7 +12,6 @@ scoreboard players add @a[current_world=true] sessionID 0
 #   have been reset since then. Calamity often hard resets data, but this doesn't apply to offline
 #   players.
 execute as @a[current_world=true] unless score @s sessionID = SessionID gameVariable run tag @s remove Registered
-execute as @a[current_world=true] unless score @s sessionID = SessionID gameVariable run tellraw @s {"translate":"system.message","color":"red","with":[{"translate":"calamity.player.sessionID.mismatch"}]}
     # If a match is in-progress, advise the players that the joining player has been made a spectator.
     execute as @a[current_world=true] unless score @s sessionID = SessionID gameVariable run tellraw @a[current_world=true] {"translate":"system.message","with":[{"translate":"calamity.player.sidelined","color":"green","with":[{"selector":"@s"}]}]}
 
