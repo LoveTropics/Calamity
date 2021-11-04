@@ -15,6 +15,6 @@ execute as @a[current_world=true] unless score @s sessionID = SessionID gameVari
 
 # The functions below will handle players, no matter what state the game is in.
 execute as @a[current_world=true,tag=!Registered] at @s run function #calamity:register_player
-execute as @a[current_world=true,tag=!Registered] if score GameState gameVariable matches 1 run gamemode spectator @s
+execute as @a[current_world=true,tag=!Registered] at @s if score GameState gameVariable matches 1 run gamemode spectator @s
 scoreboard players set @a[current_world=true,scores={leftGame=1..}] leftGame 0
 tag @a[current_world=true,tag=!Registered] add Registered
