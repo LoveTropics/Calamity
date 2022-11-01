@@ -97,21 +97,44 @@
     },
 
     {
-      "type": "ltminigames:commands",
-      "ready": "function #calamity:load",
-      "stop": "function calamity:load/remove_all_tags_teams_and_scoreboards",
-      "player_participate": "function calamity:player/handle_joining_participant",
-      "player_spectate": "function calamity:player/handle_joining_spectator",
-      "player_remove": [
-        "function calamity:player/reset_data",
-        "tag @s remove Registered"
-      ],
-      "tick": "function calamity:tick"
+      "type": "ltminigames:events",
+      "ready": {
+        "type": "ltminigames:run_commands",
+        "global": "function #calamity:load"
+      },
+      "stop": {
+        "type": "ltminigames:run_commands",
+        "global": "function calamity:load/remove_all_tags_teams_and_scoreboards"
+      },
+      "player_participate": {
+        "type": "ltminigames:run_commands",
+        "player": "function calamity:player/handle_joining_participant"
+      },
+      "player_spectate": {
+        "type": "ltminigames:run_commands",
+        "player": "function calamity:player/handle_joining_spectator"
+      },
+      "player_remove": {
+        "type": "ltminigames:run_commands",
+        "player": [
+          "function calamity:player/reset_data",
+          "tag @s remove Registered"
+        ]
+      },
+      "tick": {
+        "type": "ltminigames:run_commands",
+        "global": "function calamity:tick"
+      }
     },
     {
-      "type": "ltminigames:scheduled_commands",
-      "run": "function calamity:load/start_match_countdown",
-      "time": 300
+      "type": "ltminigames:scheduled_actions",
+      "target": "none",
+      "actions": {
+        "300": {
+          "type": "ltminigames:run_commands",
+          "global": "function calamity:load/start_match_countdown"
+        }
+      }
     },
 
     {
