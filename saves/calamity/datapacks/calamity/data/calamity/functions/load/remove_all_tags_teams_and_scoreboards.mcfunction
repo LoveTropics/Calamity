@@ -96,3 +96,6 @@ team remove red
 team remove fakeRed
 team remove fakeBlue
 team remove finishLine
+
+# Remove Bossbars
+bossbar remove calamity:iron_ore
