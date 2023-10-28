@@ -97,16 +97,30 @@
     },
 
     {
+      "type": "ltminigames:phase_triggers/ready",
+      "actions": {
+        "type": "ltminigames:run_commands",
+        "global": "function #calamity:load"
+      }
+    },
+    {
+      "type": "ltminigames:phase_triggers/stop",
+      "actions": {
+        "type": "ltminigames:run_commands",
+        "global": "function calamity:load/remove_all_tags_teams_and_scoreboards"
+      }
+    },
+    {
+      "type": "ltminigames:events/game/tick",
+      "actions": {
+        "type": "ltminigames:run_commands",
+        "global": "function calamity:tick"
+      }
+    },
+
+    {
       "type": "ltminigames:events",
       "events": {
-        "ready": {
-          "type": "ltminigames:run_commands",
-          "global": "function #calamity:load"
-        },
-        "stop": {
-          "type": "ltminigames:run_commands",
-          "global": "function calamity:load/remove_all_tags_teams_and_scoreboards"
-        },
         "player_participate": {
           "type": "ltminigames:run_commands",
           "player": "function calamity:player/handle_joining_participant"
@@ -114,10 +128,6 @@
         "player_spectate": {
           "type": "ltminigames:run_commands",
           "player": "function calamity:player/handle_joining_spectator"
-        },
-        "tick": {
-          "type": "ltminigames:run_commands",
-          "global": "function calamity:tick"
         }
       }
     },
