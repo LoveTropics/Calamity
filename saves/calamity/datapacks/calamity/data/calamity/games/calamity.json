@@ -115,13 +115,6 @@
           "type": "ltminigames:run_commands",
           "player": "function calamity:player/handle_joining_spectator"
         },
-        "player_remove": {
-          "type": "ltminigames:run_commands",
-          "player": [
-            "function calamity:player/reset_data",
-            "tag @s remove Registered"
-          ]
-        },
         "tick": {
           "type": "ltminigames:run_commands",
           "global": "function calamity:tick"
