@@ -91,8 +91,6 @@ tag @a[current_world=true] remove VotedForfeit
 # Remove Scoreboard Teams
 team remove lobby
 team remove spectator
-team remove blue
-team remove red
 team remove fakeRed
 team remove fakeBlue
 team remove finishLine

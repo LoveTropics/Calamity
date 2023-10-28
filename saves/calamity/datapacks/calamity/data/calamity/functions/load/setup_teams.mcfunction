@@ -7,8 +7,6 @@
 # Remove Scoreboard Teams
 team remove lobby
 team remove spectator
-team remove blue
-team remove red
 team remove finishLine
 
 # Add And Configure Scoreboard Teams
