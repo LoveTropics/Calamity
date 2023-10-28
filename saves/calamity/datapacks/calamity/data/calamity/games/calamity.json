@@ -97,7 +97,7 @@
     },
 
     {
-      "type": "ltminigames:phase_triggers/ready",
+      "type": "ltminigames:phase_triggers/start",
       "actions": {
         "type": "ltminigames:run_commands",
         "global": "function #calamity:load"
