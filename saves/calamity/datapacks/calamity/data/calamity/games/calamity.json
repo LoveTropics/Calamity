@@ -135,7 +135,7 @@
       "type": "ltminigames:scheduled_actions",
       "target": "none",
       "actions": {
-        "300": {
+        "15": {
           "type": "ltminigames:run_commands",
           "global": "function calamity:load/start_match_countdown"
         }
