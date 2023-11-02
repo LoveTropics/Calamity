@@ -4,10 +4,6 @@
 #> Purpose: Reset the map and player states to neutral
 #>--------------------------------------------------------------------------------------------------
 
-#> Purpose: Establish a SessionID by using game time
-execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
-
 # Make the ore counter visible
 function calamity:points/setup_bossbar
 

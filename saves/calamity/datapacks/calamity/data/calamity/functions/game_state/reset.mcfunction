@@ -26,10 +26,6 @@ function calamity:arena/handler
 scoreboard players set #arenaAction gameVariable 4
 function calamity:arena/handler
 
-# Update the SessionID so players are properly handled
-execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
-
 # Return the player to the lobby state
 execute as @a[current_world=true] run function #calamity:register_player
 execute as @a[current_world=true] run function calamity:player/set_to_lobby_mode

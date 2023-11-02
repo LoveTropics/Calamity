@@ -35,7 +35,6 @@ scoreboard objectives remove killScore
 scoreboard objectives remove streakPoints
 scoreboard objectives remove streakLevel
 scoreboard objectives remove nextStreakLevel
-scoreboard objectives remove sessionID
 scoreboard objectives remove leftGame
 scoreboard objectives remove selectedItem
 scoreboard objectives remove giveSpawnItems
@@ -83,7 +82,6 @@ tag @a[current_world=true] remove GiveMessageAttack
 tag @a[current_world=true] remove GiveMessageAttacked
 tag @a[current_world=true] remove GiveResources
 tag @a[current_world=true] remove Playing
-tag @a[current_world=true] remove Registered
 tag @a[current_world=true] remove Spectating
 tag @a[current_world=true] remove StopForfeit
 tag @a[current_world=true] remove VotedForfeit

@@ -87,10 +87,6 @@ scoreboard objectives add streakLevel dummy
 scoreboard objectives remove nextStreakLevel
 scoreboard objectives add nextStreakLevel dummy
 
-# Players may disconnect and reconnect during matches, let's ensure they're in the right match.
-scoreboard objectives remove sessionID
-scoreboard objectives add sessionID dummy
-
 # Minecraft will tick this up when a player disconnects from the game.
 scoreboard objectives remove leftGame
 scoreboard objectives add leftGame minecraft.custom:minecraft.leave_game
@@ -263,12 +259,6 @@ scoreboard objectives add gameVariable dummy
     scoreboard players set #tableCandle gameVariable 0
     scoreboard players set #tableCandleSmoke gameVariable 0
     scoreboard players set #OnlinePlayers gameVariable 0
-
-# Establish a SessionID by using game time. We wouldn't normally act on all players in a
-#   function like this, but it's important the players are registered so an error message won't
-#   play when we reload the game.
-execute store result score SessionID gameVariable run time query gametime
-scoreboard players operation @a[current_world=true] sessionID = SessionID gameVariable
 
 # Game starts in lobby mode by default.
 scoreboard players set GameState gameVariable 0
