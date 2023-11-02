@@ -190,6 +190,17 @@
     "ltminigames:cause_of_death_tracker",
     "ltminigames:kills_tracker",
     "ltminigames:damage_tracker",
-    "ltminigames:spectator_chase"
+    "ltminigames:spectator_chase",
+
+    {
+      "type": "ltminigames:bind_controls",
+      "scopes": {
+        "admins": {
+          "eliminate": {
+            "type": "ltminigames:eliminate_player"
+          }
+        }
+      }
+    }
   ]
 }

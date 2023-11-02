@@ -8,7 +8,7 @@
 playsound minecraft:event.raid.horn master @a[current_world=true] 136 150 89 999999 0.75
 
 # Make all players spectators!
-gamemode spectator @a[current_world=true]
+execute as @a[current_world=true,gamemode=!spectator] run game eliminate
 
 # Remove tags
 tag @a[current_world=true] remove VotedForfeit

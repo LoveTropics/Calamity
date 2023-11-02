@@ -19,8 +19,7 @@ tag @a[current_world=true,team=red] add Playing
 clear @a[current_world=true]
 effect give @a[current_world=true,tag=Playing] minecraft:regeneration 3 10 false
 execute as @a[current_world=true,tag=Playing] run function calamity:player/give_match_effects
-gamemode survival @a[current_world=true,tag=Playing]
-gamemode spectator @a[current_world=true,tag=!Playing]
+gamemode survival @a[current_world=true,gamemode=!spectator]
 
 scoreboard players set @a[current_world=true,tag=Playing] streakPoints 0
 scoreboard players set @a[current_world=true,tag=Playing] streakLevel 0
