@@ -258,7 +258,6 @@ scoreboard objectives add gameVariable dummy
     scoreboard players set #selectedArena gameVariable 0
     scoreboard players set #tableCandle gameVariable 0
     scoreboard players set #tableCandleSmoke gameVariable 0
-    scoreboard players set #OnlinePlayers gameVariable 0
 
 # Game starts in lobby mode by default.
 scoreboard players set GameState gameVariable 0
