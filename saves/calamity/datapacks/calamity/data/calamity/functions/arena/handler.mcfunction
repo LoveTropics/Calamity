@@ -31,6 +31,8 @@
     # 2 Some arenas might have additional things to tick every second. It should all be stored here.
     execute if score #arenaAction gameVariable matches 2 if score #currentArena gameVariable matches 1 run function calamity:arena/calamity/actions
     # 3 Count the ore
+    execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 1 run say SCANNING FOR ORE
+    execute as @a[current_world=true] run scoreboard objectives setdisplay sidebar gameVariable
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 1 run execute store result score OreLeft gameVariable run fill 130 0 181 142 67 195 minecraft:petrified_oak_slab[type=double] replace minecraft:iron_ore
     execute if score #arenaAction gameVariable matches 3 if score #currentArena gameVariable matches 1 run fill 130 0 181 142 67 195 minecraft:iron_ore replace minecraft:petrified_oak_slab
     # 4 Send welcome message
