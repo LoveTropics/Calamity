@@ -18,7 +18,7 @@ execute if entity @s[tag=TeamBlue] run playsound calamity:generator.ready master
 execute if entity @s[tag=TeamRed] run playsound calamity:generator.ready master @a[current_world=true,team=red] ~ ~-2 ~
 
 # Update the sign
-execute as @s[tag=FacingWest] run data merge block ^ ^ ^3 {Text3: "{\"translate\":\"calamity.generator.sign.ready\"}"}
+execute as @s[tag=FacingWest] run data merge block ^ ^ ^3 {is_waxed:1b, front_text: {messages:["\"\"", "\"\"", "{\"translate\":\"calamity.generator.sign.ready\"}", "\"\""]}}
 
 # Tag which caused the handler to call this function
 tag @s remove ReadyToStart
