@@ -176,14 +176,6 @@ summon minecraft:area_effect_cloud 136 68 87 {CustomName: '{"text":"ArenaHeight"
 execute store result score #arenaHeight gameVariable run data get entity @e[current_world=true,type=minecraft:area_effect_cloud,tag=marker,tag=arenaHeight,limit=1] Pos[1]
 
 #>--------------------------------------------------------------------------------------------------
-#> Purpose: Place spawnpoint markers
-#>--------------------------------------------------------------------------------------------------
-
-summon minecraft:area_effect_cloud 136 59 32 {CustomName: '{"text":"LobbySpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
-summon minecraft:area_effect_cloud 165 48 90 {CustomName: '{"text":"BlueSpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
-summon minecraft:area_effect_cloud 107 48 90 {CustomName: '{"text":"RedSpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
-
-#>--------------------------------------------------------------------------------------------------
 #> Purpose: Place generators
 #>--------------------------------------------------------------------------------------------------
 

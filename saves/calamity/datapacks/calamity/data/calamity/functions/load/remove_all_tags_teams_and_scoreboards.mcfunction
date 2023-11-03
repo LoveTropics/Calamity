@@ -35,7 +35,6 @@ scoreboard objectives remove killScore
 scoreboard objectives remove streakPoints
 scoreboard objectives remove streakLevel
 scoreboard objectives remove nextStreakLevel
-scoreboard objectives remove leftGame
 scoreboard objectives remove selectedItem
 scoreboard objectives remove giveSpawnItems
 scoreboard objectives remove itemValues

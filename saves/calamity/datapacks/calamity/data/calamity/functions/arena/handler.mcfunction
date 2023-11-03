@@ -11,7 +11,6 @@
 #   #arenaAction gameVariable 3 = Count ore mines
 #   #arenaAction gameVariable 4 = Send welcome message
 #   #arenaAction gameVariable 5 = Start match
-#   #arenaAction gameVariable 6 = Additional lobby effects
 #   #arenaAction gameVariable 7 = Additioanl match effects
 #   #arenaAction gameVariable 8 = Give starting items
 #   #arenaAction gameVariable 9 = Give items to any respawning player
@@ -61,7 +60,6 @@
     execute if score #arenaAction gameVariable matches 5 if score #currentArena gameVariable matches 2 run setblock 106 13 117 minecraft:air
     execute if score #arenaAction gameVariable matches 5 if score #currentArena gameVariable matches 2 run kill @e[current_world=true,type=area_effect_cloud,tag=menuInstructions]
     # 6, 7 Give effects    
-    execute if score #arenaAction gameVariable matches 6 if score #currentArena gameVariable matches 2 as @a[current_world=true] run effect give @s minecraft:night_vision 999999 0 true
     execute if score #arenaAction gameVariable matches 7 if score #currentArena gameVariable matches 2 as @a[current_world=true] run effect give @s minecraft:night_vision 999999 0 true
     # 8 Give spawn items
     execute if score #arenaAction gameVariable matches 8 if score #currentArena gameVariable matches 2 run give @a[current_world=true,tag=Playing] minecraft:bow{Unbreakable:1b,Enchantments:[{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:6,Operation:0,UUID:[I;-2068228233,-322420677,-1309210629,532578535],Slot:"mainhand"}]} 1

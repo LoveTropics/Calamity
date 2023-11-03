@@ -1,4 +1,4 @@
-# Called from: calamity:game_state/timer, calamity:game_state/timer_start_match
+# Called from: calamity:game_state/timer
 
 #>--------------------------------------------------------------------------------------------------
 # Purpose: Run math which outputs a 0 when an exact second has passed (based on every 20 game ticks)

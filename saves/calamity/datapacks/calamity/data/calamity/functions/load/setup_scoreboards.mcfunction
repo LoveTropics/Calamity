@@ -87,15 +87,9 @@ scoreboard objectives add streakLevel dummy
 scoreboard objectives remove nextStreakLevel
 scoreboard objectives add nextStreakLevel dummy
 
-# Minecraft will tick this up when a player disconnects from the game.
-scoreboard objectives remove leftGame
-scoreboard objectives add leftGame minecraft.custom:minecraft.leave_game
-
 # Player scores
 scoreboard objectives remove selectedItem
 scoreboard objectives add selectedItem dummy
-scoreboard objectives remove giveSpawnItems
-scoreboard objectives add giveSpawnItems deathCount
 scoreboard objectives add playerHeight dummy
 
 # Craft items are worth points. This scoreboard tracks those points.
@@ -256,8 +250,6 @@ scoreboard objectives add gameVariable dummy
     scoreboard players set #currentArena gameVariable 1
     scoreboard players set #currentArena gameVariable 1
     scoreboard players set #selectedArena gameVariable 0
-    scoreboard players set #tableCandle gameVariable 0
-    scoreboard players set #tableCandleSmoke gameVariable 0
 
 # Game starts in lobby mode by default.
 scoreboard players set GameState gameVariable 0

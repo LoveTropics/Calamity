@@ -52,7 +52,6 @@ function calamity:load/kill_entities
 #>--------------------------------------------------------------------------------------------------
 
 # Define spawnpoints
-summon minecraft:area_effect_cloud 106 13 114 {CustomName: '{"text":"LobbySpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
 summon minecraft:area_effect_cloud 198 13 117 {CustomName: '{"text":"BlueSpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
 summon minecraft:area_effect_cloud 77 13 116 {CustomName: '{"text":"RedSpawnpoint"}', Tags: ["FacingSouth", "Spawnpoint"], CustomNameVisible: 0b, Duration: 2147483647, Rotation: [0.0f, 0.0f]}
 

@@ -1,4 +1,4 @@
-# Called from: calamity:game_state/timer_start_match
+# Called from: minigame phase_triggers/start
 
 #>--------------------------------------------------------------------------------------------------
 #> Purpose: Reset the map and player states to neutral
@@ -11,15 +11,10 @@ function calamity:points/setup_bossbar
 #> Purpose: Give players items and effects and let them play the game.
 #>--------------------------------------------------------------------------------------------------
 
-# Any player on a blue/red team are playing the game
-tag @a[current_world=true,team=blue] add Playing
-tag @a[current_world=true,team=red] add Playing
-
 # Clear the player's items and effects, give them items, refill their health and hunger
 clear @a[current_world=true]
 effect give @a[current_world=true,tag=Playing] minecraft:regeneration 3 10 false
 execute as @a[current_world=true,tag=Playing] run function calamity:player/give_match_effects
-gamemode survival @a[current_world=true,gamemode=!spectator]
 
 scoreboard players set @a[current_world=true,tag=Playing] streakPoints 0
 scoreboard players set @a[current_world=true,tag=Playing] streakLevel 0
@@ -48,14 +43,8 @@ scoreboard players enable @a[current_world=true,tag=Playing] gg
 effect give @a[current_world=true] minecraft:slow_falling 1 0 true
 effect clear @a[current_world=true] minecraft:slow_falling
 
-execute as @a[current_world=true,tag=Playing] run function calamity:player/set_match_spawnpoint
-
 # Reset the match timer
 scoreboard players set MatchTimeInTicks gameVariable 0
-
-# Give starting items
-scoreboard players set #arenaAction gameVariable 8
-execute as @a[current_world=true,tag=Playing] run function calamity:arena/handler
 
 # Arena-specific actions (like removing blocks or entities)
 scoreboard players set #arenaAction gameVariable 5
